@@ -1,10 +1,26 @@
 package com.springDingDong.haneul.assignment1;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
 public class StudyMember implements PDAStudyUser {
+
+    @Id
+    @GeneratedValue
+    private Long id;
 
     private String name;
     private int age;
     private int attendanceCount;
+
+    //기본 생성자 필요
+    public StudyMember() {}
 
     public StudyMember(String name, int age) {
         this.name = name;
